@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import RootLayOut from './components/RootLayOut'
 import NotFound from './pages/NotFound'
 import HomePage from './pages/HomePage'
+import { UseSelector } from 'react-redux'
 
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
 
       </Route>
 
-    </Routes>
+    </Routes >
   )
 }
 
