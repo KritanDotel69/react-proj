@@ -12,8 +12,8 @@ const App = () => {
     <Routes>
       <Route path='/' element={<RootLayOut />} >
         <Route index element={<HomePage />} />
-        <Route path='add-some' element={< Crud />} /> */}
-        { <Route path='update-some/:id' element={<  UpdateCrud />} />
+        <Route path='add-some' element={< Crud />} />
+        <Route path='update-some/:id' element={<  UpdateCrud />} />
         <Route path='*' element={<NotFound />} />
       </Route>
 
