@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Error = ({ error }) => {
+const ErrorPage = ({ error }) => {
   return (
     <div>
       <h1 className='text-pink-700 p-5'>{error.data.status_message}</h1>
@@ -8,4 +8,4 @@ const Error = ({ error }) => {
   )
 }
 
-export default Error
+export default ErrorPage
