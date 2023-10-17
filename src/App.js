@@ -3,21 +3,22 @@ import { Route, Routes } from 'react-router'
 import RootLayOut from './components/RootLayOut'
 import NotFound from './pages/NotFound'
 import HomePage from './pages/HomePage'
-import { UseSelector } from 'react-redux'
+import UpdateCrud from './components/UpdateCrud'
+import Crud from './components/Crud'
 
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<RootLayOut />} >
-        <Route index element={<HomePage />} />
-
-        <Route path='*' element={<NotFound />} />
-
+        {/* <Route index element={<HomePage />} />
+        <Route path='add-some' element={< Crud />} /> */}
+        {/* <Route path='update-some/:id' element={<  UpdateCrud />} />
+        <Route path='*' element={<NotFound />} /> */}
       </Route>
 
     </Routes >
   )
 }
 
-export default App
+export default App 

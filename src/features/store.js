@@ -1,6 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { movieApi } from "./movieApi";
 
-import todoReducer from './todoSlice'
+
+
+
+
+
 
 
 
@@ -8,6 +13,9 @@ import todoReducer from './todoSlice'
 
 export const store = configureStore({
   reducer: {
-    todo: todoReducer
-  }
-});
+    [movieApi.reducerPath]: movieApi.reducer,
+  },
+  middleware: (curryGetDefaultMiddleware) => curryGetDefaultMiddleware().concat([
+    movieApi.middleware
+  ])
+})

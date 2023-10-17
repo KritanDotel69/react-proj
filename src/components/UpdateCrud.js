@@ -11,9 +11,9 @@ import {
 } from "@material-tailwind/react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../features/todoSlice';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { nanoid } from '@reduxjs/toolkit';
 
 const radioData = [
@@ -31,7 +31,12 @@ const checkData = [
 
 
 
-const Crud = () => {
+const UpdateCrud = () => {
+
+  const { id } = useParams();
+  const { todos } = useSelector((store) => store.todo);
+  const todo = todos.find((todo) => todo.id === id);
+
 
   const dispatch = useDispatch();
   const nav = useNavigate();
@@ -61,7 +66,7 @@ const Crud = () => {
 
   const formik = useFormik({
     initialValues: {
-      username: '',
+      username: todo?.username,
       email: '',
       gender: '',
       habits: [],
@@ -161,7 +166,7 @@ const Crud = () => {
               onChange={(e) => {
                 const file = e.target.files[0];
 
-                // formik.setFieldValue('imageFile', file);
+                //formik.setFieldValue('imageFile', file);
                 // const url = URL.createObjectURL(file);
                 // console.log(url);
 
@@ -191,4 +196,4 @@ const Crud = () => {
   )
 }
 
-export default Crud
+export default UpdateCrud
