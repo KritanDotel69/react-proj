@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router'
 import RootLayOut from './components/RootLayOut'
 import NotFound from './pages/NotFound'
 import HomePage from './pages/HomePage'
-import UpdateCrud from './components/UpdateCrud'
-import Crud from './components/Crud'
+import CategoryMovie from './pages/CategoryMovie'
+
 
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
     <Routes>
       <Route path='/' element={<RootLayOut />} >
         <Route index element={<HomePage />} />
-        <Route path='add-some' element={< Crud />} />
-        <Route path='update-some/:id' element={<  UpdateCrud />} />
+        <Route path='movie/:category' element={<CategoryMovie />} />
+
         <Route path='*' element={<NotFound />} />
       </Route>
 
