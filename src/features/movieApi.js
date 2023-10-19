@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { apiKey } from './constant';
 
 
 
@@ -14,7 +15,7 @@ export const movieApi = createApi({
       query: (query) => ({
         url: `/movie/${query}`,
         params: {
-          api_key: '857e7f7fca5cb29148c33fbac08ea51d'
+          api_key: apiKey
         }
       })
     }),
@@ -22,8 +23,30 @@ export const movieApi = createApi({
 
 
 
-  })
+
+    getMovieByDetail: builder.query({
+      query: (query) => ({
+        url: `/movie/${query}`,
+        params: {
+          api_key: apiKey
+        }
+      })
+    }),
+
+
+
+    videoById: builder.query({
+      query: (query) => ({
+        url: `/movie/${query}`,
+        params: {
+          api_key: apiKey
+        }
+      })
+    }),
+
+
+  }) 
 });
 
-export const { useMovieByCategoryQuery } = movieApi;
 
+export const { useMovieByCategoryQuery, useVideoByIdQuery, useGetMovieByCategoryQuery } = movieApi;
