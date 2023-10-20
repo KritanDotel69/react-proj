@@ -7,6 +7,7 @@ import CategoryMovie from './pages/CategoryMovie'
 
 
 
+
 const App = () => {
   return (
     <Routes>
@@ -15,6 +16,7 @@ const App = () => {
         <Route path='movie/:category' element={<CategoryMovie />} />
 
         <Route path='*' element={<NotFound />} />
+
       </Route>
 
     </Routes >

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import Search from '../pages/detail/Search';
 
 const Header = () => {
 
@@ -10,10 +11,10 @@ const Header = () => {
   }
 
   return (
-    <div className='bg-black text-white flex justify-between px-4 py-3 items-baseline'>
+    <div className='bg-black text-white flex justify-between px-4 py-3 items-baseline sticky top-0'>
 
       <div className='space-y-2'>
-        <h1 className='text-2xl'>Movies</h1>
+        <NavLink to='/' replace><h1 className='text-2xl'>Movies</h1></NavLink>
         {show && <nav className='space-y-2  flex-col hidden sm:flex '>
           <NavLink className="hover:bg-white hover:text-black hover:px-4 hover:py-1">About</NavLink>
           <NavLink>Contact</NavLink>
@@ -28,10 +29,12 @@ const Header = () => {
 
 
       <nav className='space-x-6 sm:hidden'>
+        <NavLink to='/movie/popular' className="hover:bg-white hover:text-black hover:px-4 hover:py-1">Popular</NavLink>
+        <NavLink to='/movie/top_rated'>TopRated</NavLink>
+        <NavLink to='/movie/upcoming'>Upcoming</NavLink>
+        <Search />
 
 
-        <NavLink className="hover:bg-white hover:text-black hover:px-4 hover:py-1">Category</NavLink>
-        <NavLink to='/add-some'>Add Some</NavLink>
 
 
       </nav>
